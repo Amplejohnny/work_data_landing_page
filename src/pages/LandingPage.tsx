@@ -1,6 +1,9 @@
 import React from "react";
 import { Clipboard, Briefcase, Users, User } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import workDataLogo from "../assets/WorkDataID logo 2.png";
+import workDataFooterLogo from "../assets/footer.png";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpg";
 import image3 from "../assets/image3.jpg";
@@ -12,7 +15,7 @@ const LandingPage: React.FC = () => {
     <div className="font-sans text-gray-800">
       {/* Header */}
       <header className="bg-white shadow">
-        <div className="container mx-auto flex items-center justify-between px-16">
+        <div className="container mx-auto flex items-center justify-between px-16 py-1">
           <div className="flex items-center">
             <img src={workDataLogo} alt="Work Data ID" className="h-16" />
           </div>
@@ -309,18 +312,22 @@ const LandingPage: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300">
-        <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
+      <footer className="bg-black text-gray-300">
+        <div className="container mx-auto px-38 py-10 space-x-8 flex-row justify-between flex items-center">
+          <div className=" flex flex-col w-2/4 ">
             <div className="flex items-center mb-4">
-              <img src={workDataLogo} alt="Work Data ID" className="h-16" />
+              <img
+                src={workDataFooterLogo}
+                alt="Work Data ID"
+                className="h-16"
+              />
             </div>
             <p>
-              Building trust and transparency in the hiring process through
-              verified work data and employment history.
+              Building trust and transparency in the hiring process <br />{" "}
+              through verified work data and employment history.
             </p>
           </div>
-          <div>
+          <div className="flex flex-col mt-8 w-1/4">
             <h4 className="font-semibold mb-2">Company</h4>
             <ul>
               <li>
@@ -340,7 +347,7 @@ const LandingPage: React.FC = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="flex flex-col mt-8 w-1/4">
             <h4 className="font-semibold mb-2">Legal</h4>
             <ul>
               <li>
@@ -361,8 +368,28 @@ const LandingPage: React.FC = () => {
             </ul>
           </div>
         </div>
-        <div className="text-center py-4 border-t border-gray-700">
-          <p>© 2025 Work Data. All rights reserved.</p>
+        <hr className="border-gray-200 my-4 mx-8" />
+        <div className="flex justify-between text-center py-4 px-62">
+          <div>
+            <p>Copyright © {new Date().getFullYear()}</p>
+          </div>
+          <div className="flex space-x-8">
+            <a href="#" rel="noopener noreferrer" title="Follow us on LinkedIn">
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                size="lg"
+                className="hover:text-white"
+              />
+            </a>
+            <a href="#" rel="noopener noreferrer" title="Follow us on Twitter">
+              <FontAwesomeIcon
+                icon={faTwitter}
+                size="lg"
+                className="hover:text-white"
+              />
+              <span className="sr-only">Twitter</span>
+            </a>
+          </div>
         </div>
       </footer>
     </div>
